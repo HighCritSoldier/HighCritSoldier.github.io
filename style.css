@@ -1,6 +1,6 @@
-/* Html Styles rgb(20, 55, 112)*/
+/* Html Styles*/
 html {
-    background-color: white;
+    background-color: rgb(200, 200, 200);
     font-family: Times;
     font-size: 18px;
     border-top: 20px;
@@ -12,11 +12,16 @@ html {
 /* Body Styles */
 body {
   margin: 0px auto auto auto;
+  width: 92%;
   position: relative;
   background-color: white;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
   transition: background-color .5s;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 /* Header Styles */
@@ -31,87 +36,37 @@ header h1 {
   font-size: 50px;
 }
 
-/* Aside Styles */
-aside {
-  flex: 20%;
-  background-color: #f1f1f1;
+/* Column Container */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Sidebar/Left Column */
+.side {
+  flex: 30%;
+  background-color: whitesmoke;
   padding: 20px;
 }
 
-aside h1 {
-  text-align: center;
-}
-
-/* Main Styles */
-main {
+/* Main Column */
+.main {
   flex: 70%;
-  background-color: #ffffff;
-  margin: 0px, 0;
-}
-
-main h1 {
-  font-family: Vladimir Script;
-  text-align: center;
-  margin: 0px, 0;
-}
-
-main h2 {
-  font-family: Vladimir Script;
-  font-size: 30px;
-  text-align: center;
-  text-decoration: underline;
-  margin: 0px, 0;
-}
-
-main h3 {
-  font-family: Times;
-  text-align: left;
-  margin: 0px, 0;
-}
-
-main p {
-  font-family: Times;
-  font-size: 20px;
-  text-indent: 50px;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-/* Table Styles */
-table {
-  border: 8px groove black;
-  background-image: radial-gradient(#004e82 55%, #4988b2 85%, #ffffff 100%);
-  width: 550px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-td {
-  color: white;
-  text-align: center;
-  text-shadow: 3px 3px 5px black;
-}
-
-dl {
-  padding: 5px;
+  background-color: white;
+  padding: 20px;
 }
 
 /* Footer Styles */
 footer {
   padding: 10px;
   font-family: Times;
-  font-size: 12px;
+  font-size: 15px;
   text-align: center;
   background: #303030;
 }
 
 footer p {
   color: white;
-}
-/* Dual Row Styles */
-.row {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 /* Top Navigation Styles */
@@ -126,11 +81,12 @@ footer p {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 18px;
 }
 
 nav a.right {
   float: right;
+  padding: 5px 5px;
 }
 
 .topnav a:hover {
@@ -143,74 +99,6 @@ nav a.right {
   color: white;
 }
 
-/* Side Navigation Styles */
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
-  margin: 0px 0;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
-/* Pagination Styles */
-
-.pagination a {
-  background-color: #ffffff;
-  color: black;
-  font-size: 20px;
-  text-decoration: none;
-  transition: background-color .3s;
-  overflow: auto;
-  margin: auto;
-  width: 60%;
-  border: 3px solid Black;
-  padding: 10px;
-}
-
-.pagination a.active {
-  background-color: dodgerblue;
-  color: white;
-}
-
-.pagination a:hover:not(.active) {background-color: #ddd;}
-
 /* Utility Styles */
 .center {
   text-align: center;
@@ -221,11 +109,17 @@ nav a.right {
   text-shadow: 0 0 8px rgba(255,255,255,50);
 }
 
-.parallax {
-  background-image: url();
-  min-height: 150px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
 }
