@@ -1,7 +1,7 @@
 /* Html Styles*/
 html {
-    background-color: rgb(200, 200, 200);
-    font-family: Times;
+    background-color: rgb(240, 240, 240);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 18px;
     border-top: 20px;
     border-bottom: 20px;
@@ -12,21 +12,43 @@ html {
 /* Body Styles */
 body {
   margin: 0px auto auto auto;
-  width: 92%;
+  width: 76%;
   position: relative;
   background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-left: 1px solid gray;
   border-right: 1px solid gray;
   transition: background-color .5s;
+}
+
+/* Heading Styles */
+h1 {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 22px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/* Paragraph Style */
+p {
+  font-size: 17px;
 }
 
 * {
   box-sizing: border-box;
 }
 
+li {
+  font-size: 17px;
+}
+
 /* Header Styles */
 header {
-  padding: 30px;
+  padding: 15px;
   text-align: center;
   background: #515151;
   color: white;
@@ -58,7 +80,7 @@ header h1 {
 
 /* Footer Styles */
 footer {
-  padding: 10px;
+  padding: 3px;
   font-family: Times;
   font-size: 15px;
   text-align: center;
@@ -95,7 +117,7 @@ nav a.right {
 }
 
 .topnav a.active {
-  background-color: #4CAF50;
+  background-color: rgb(23, 184, 135);
   color: white;
 }
 
@@ -122,4 +144,46 @@ nav a.right {
     float: none;
     width: 100%;
   }
+}
+
+/* Skill Bars */
+.skill-bars {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-bars li {
+  margin: 10px 0;
+}
+
+.skill-name {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.skill-bar {
+  background-color: #e0e0e0;
+  border-radius: 20px; /* Adjust the radius for desired roundness */
+  height: 18px;
+  margin-top: 12px;
+  overflow: hidden;
+  position: relative; /* Added for positioning the percentage number */
+}
+
+.skill-level {
+  background-color: rgb(23, 184, 135); /* Change the color of the filled progress bar */
+  border-radius: 20px; /* Match the radius of the container */
+  height: 100%;
+  transition: width 1s; /* Optional smooth animation */
+  position: relative; /* Added for positioning the percentage number */
+}
+
+.skill-percent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 14px;
+  transform: translate(-50%, -50%);
+  color: #fff; /* Color of the percentage number */
 }
